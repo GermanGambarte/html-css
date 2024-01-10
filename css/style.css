@@ -1,6 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;600&display=swap");
+:root {
+  --bg-primary: #1f2937;
+  --bg-current: #111827;
+  --bg-hover: #374151;
+  --fg-primary: #ffffff;
+  --soft-fg: #d1d5db;
+  --icon-fg: #9ca3af;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --nav-img-width: 2rem;
+  --full-w: 100dvw;
+  --full-h: 100dvh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  height: 100vh;
   display: grid;
+  font-family: Onest, sans-serif;
+  height: var(--full-h);
   place-content: center;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+svg {
+  width: var(--nav-img-width);
+  color: var(--icon-fg);
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  gap: 1rem;
+  height: var(--full-h);
+  place-content: center;
+}
+
+.navbar__simple,
+.navbar__quick,
+.navbar__search {
+  align-items: center;
+  background-color: var(--bg-primary);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  width: calc(100dvw - 2rem);
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: var(--nav-img-width);
+}
+
+.link,
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.link {
+  color: var(--fg-primary);
+  text-decoration: none;
+  &:hover {
+    background-color: var(--bg-hover);
+  }
+}
+
+.button {
+  background-color: var(--accent);
+  color: var(--fg-primary);
+  border: none;
+  &:hover {
+    background-color: var(--accent-hover);
+  }
+}
+
+.current {
+  background-color: var(--bg-current);
+  &:hover {
+    background-color: var(--bg-current);
+  }
+}
+
+.profile {
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  object-fit: cover;
+  width: var(--nav-img-width);
+}
+
+.profile,
+.notification {
+  cursor: pointer;
+}
+
+.notification {
+  &:hover {
+    color: var(--fg-primary);
+  }
+}
+
+.input {
+  background-color: var(--bg-hover);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--soft-fg);
+  font-size: 1.1rem;
+  padding-block: 0.3rem;
+  padding-inline: 0.5rem;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: var(--icon-fg);
+  }
 }
